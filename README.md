@@ -48,3 +48,14 @@ this keyword
 binding 
 weakset 
 weakmap 
+
+Shashwat Srivastava Study Plan Update 30/10/2025
+First Half:
+  What I have done: covered higher order functions 
+constructors
+inheritance
+async await 
+started the Project (employee-wage)
+
+  What I will do next: complete the project and implement the Learnings
+  Issues faced: None.
