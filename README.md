@@ -59,3 +59,13 @@ started the Project (employee-wage)
 
   What I will do next: complete the project and implement the Learnings
   Issues faced: None.
+
+Shashwat Srivastava learning update 31/10/2004
+What i have done :
+Completed employee wage project
+Git task
+
+What i will do next 
+Oops and es6 concepts 
+
+Issues : use case 8 later cleared
