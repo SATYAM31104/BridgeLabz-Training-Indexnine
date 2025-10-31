@@ -11,15 +11,25 @@ class Person {
     }
 }
 
+class GAY {
+    greet(name){
+        return`greething ${name}`;
+    }
+}
+
+const wait=new GAY();
+console.log(wait.greet('shashwat'));
+
 const you = new Person(); // object.create expects and object and not a class
 console.log(you.talk());
 
-console.log(Person.prototype.toString());
+// console.log(Person.prototype.toString());
 
 Person.prototype.talk = function () {
     return 'new and improved talking';
 }
 console.log(you.talk());
+
 
 function Person1 () {
     this.age=12;
@@ -59,3 +69,5 @@ const obj1 = {
 const girl = {}; //empty object
 Object.setPrototypeOf(girl,obj1);
 console.log(girl.age,girl.name);
+
+
