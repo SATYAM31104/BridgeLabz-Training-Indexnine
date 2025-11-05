@@ -1,27 +1,27 @@
 // index.js
 
-const fsPromises = require('fs').promises;
-const path = require('path');
+// const fsPromises = require('fs').promises;
+// const path = require('path');
 
 
-const fileOps = async () => {
-    try{
-        const data = await fsPromises.readFile(path.join(__dirname, 'lorem.txt'), 'utf8');
-        console.log(data);
-        await fsPromises.unlink(path.join(__dirname, 'lorem.txt'),data);
-        await fsPromises.writeFile(path.join(__dirname, 'newfile.txt'),data);
-        await fsPromises.appendFile(path.join(__dirname, 'newfile.txt'),"\n\nNice to meet you");
-        await fsPromises.rename(path.join(__dirname, 'newfile.txt'),"newName.txt");
+// const fileOps = async () => {
+//     try{
+//         const data = await fsPromises.readFile(path.join(__dirname, 'lorem.txt'), 'utf8');
+//         console.log(data);
+//         await fsPromises.unlink(path.join(__dirname, 'lorem.txt'),data);
+//         await fsPromises.writeFile(path.join(__dirname, 'newfile.txt'),data);
+//         await fsPromises.appendFile(path.join(__dirname, 'newfile.txt'),"\n\nNice to meet you");
+//         await fsPromises.rename(path.join(__dirname, 'newfile.txt'),"newName.txt");
 
-        const newData = await fsPromises.readFile(path.join(__dirname, 'newName.txt'), 'utf8');
-        console.log(newData);
+//         const newData = await fsPromises.readFile(path.join(__dirname, 'newName.txt'), 'utf8');
+//         console.log(newData);
 
-    }
-    catch(error){
-        console.error(error);
-    }
-}
-fileOps();
+//     }
+//     catch(error){
+//         console.error(error);
+//     }
+// }
+// fileOps();
 // Write file
 // fs.writeFile(path.join(__dirname, 'reply.txt'), 'I am Shashwat and I am doing good', (err) => {
 //     if (err) {
@@ -55,8 +55,28 @@ fileOps();
 
 // console.log("shashwat");
 
+
 // Exit gracefully on uncaught errors
-process.on('uncaughtException', (err) => {
-    console.error(`There was an error: ${err}`);
-    process.exit(1);
-});
+// process.on('uncaughtException', (err) => {
+//     console.error(`There was an error: ${err}`);
+//     process.exit(1);
+// });
+
+const fs = require('fs');
+const os = require('os');
+
+console.log(os.cpus().length);
+
+//blocking 
+// const result = fs.readFileSync('./new-lorem.txt','utf8');
+// console.log(result);
+// console.log('This is after the blocking call');
+
+
+//non blocking
+console.log("this is before the non blocking");
+
+ fs.readFile('./new-lorem.txt','utf8',(err,data)=>{
+    console.log(data);
+ });
+console.log('This is after the blocking call');
