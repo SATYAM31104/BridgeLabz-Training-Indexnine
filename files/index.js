@@ -71,12 +71,53 @@ console.log(os.cpus().length);
 // const result = fs.readFileSync('./new-lorem.txt','utf8');
 // console.log(result);
 // console.log('This is after the blocking call');
+//writing
+fs.writeFileSync('shashwat.txt',"Hello this is blocking synchronous file");
+console.log("File written successfully");
+//reading
+console.log("Reading the blocking file");
+const data=fs.readFileSync('shashwat.txt','utf8');
+console.log("File read successfully",data);
+
+//appending
+const data1=fs.appendFileSync('shashwat.txt',"iam appending this line inside the file");
+console.log("File appended successfully",data1);   
+
+//delete
+fs.unlinkSync('shashwat.txt');
+console.log("File deleted successfully");
+
+
 
 
 //non blocking
-console.log("this is before the non blocking");
+// console.log("this is before the non blocking");
 
- fs.readFile('./new-lorem.txt','utf8',(err,data)=>{
+//  fs.readFile('./new-lorem.txt','utf8',(err,data)=>{
+//     console.log(data);
+//  });
+console.log('This is after the blocking call');
+
+//writing
+fs.writeFile('nonblocking.txt',"Hello this is the non blocking one",(err) =>{
+   if(err) throw err;
+   console.log("Non blocking file write successful");
+})
+
+//reading
+ fs.readFile('nonblocking.txt','utf8',(err,data)=>{
+   if(err) throw err;
     console.log(data);
  });
-console.log('This is after the blocking call');
+
+ //appending
+ fs.appendFile('nonblocking.txt',"This is i am appending the non blocking file",(err)=>{
+   if(err) throw err;
+   console.log("I have appended the inside the non blocking file perfectly");
+ })
+
+ //deleting
+ fs.unlink('nonblocking.txt',(err) =>{
+   if(err) throw err;
+   console.log("Non blocking file deleted successfully");
+ })
