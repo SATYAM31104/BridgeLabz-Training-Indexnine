@@ -88,8 +88,6 @@ fs.unlinkSync('shashwat.txt');
 console.log("File deleted successfully");
 
 
-
-
 //non blocking
 // console.log("this is before the non blocking");
 
@@ -121,3 +119,4 @@ fs.writeFile('nonblocking.txt',"Hello this is the non blocking one",(err) =>{
    if(err) throw err;
    console.log("Non blocking file deleted successfully");
  })
+
