@@ -114,9 +114,21 @@ fs.writeFile('nonblocking.txt',"Hello this is the non blocking one",(err) =>{
    console.log("I have appended the inside the non blocking file perfectly");
  })
 
- //deleting
+ //deleting -> 
  fs.unlink('nonblocking.txt',(err) =>{
    if(err) throw err;
    console.log("Non blocking file deleted successfully");
  })
 
+// const http = require("http");
+
+// const myServer = http.createServer((req,res)=>{
+//   if(req.url === "/"){
+//     res.end("this is the home page of the server and this will be the first page that will be called or shown")
+//   }
+//   res.end("this is a new server");
+// })
+
+// myServer.listen(8080,()=>{
+//   console.log("The server is running at server 8080");
+// })
