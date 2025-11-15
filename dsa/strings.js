@@ -55,3 +55,4 @@ function check(arrA, arrB) {
 
 console.log(check(arr1,arr));
 
+
